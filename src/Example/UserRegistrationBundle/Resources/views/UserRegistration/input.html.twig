@@ -1,0 +1,31 @@
+{#
+ # Copyright (c) 2012, 2014 KUBO Atsuhiro <kubo@iteman.jp>,
+ # All rights reserved.
+ #
+ # This file is part of PHPMentors_Training_Example_Symfony.
+ #
+ # This program and the accompanying materials are made available under
+ # the terms of the BSD 2-Clause License which accompanies this
+ # distribution, and is available at http://opensource.org/licenses/BSD-2-Clause
+ #}
+
+{% extends "ExampleUserRegistrationBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }}ユーザー情報のご入力{% endblock %}
+
+{% block content %}
+<h2>ユーザー情報のご入力</h2>
+
+<div class="well">
+  {{ form_start(form) }}
+  {{ form_errors(form) }}
+  <div class="form-actions">
+    {{ form_row(form.lastName) }}
+    {{ form_row(form.firstName) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.password) }}
+    {{ form_widget(form.next, {'attr': {'class': 'btn btn-primary'}}) }}
+  </div>
+  {{ form_end(form) }}
+</div>
+{% endblock %}
